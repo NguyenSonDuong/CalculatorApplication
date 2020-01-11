@@ -8,5 +8,6 @@ Mọi xử lý được để trong class XuLy
 # Updating 2:
 Cập nhật lại thuật toán , bắt một số ngoại lệ nhập liệu
 
-* sdfsd
-* sdfsdf
+* Kiểm tra đóng mở ngoặc có đầy đủ
+* Kiểm tra dấu chẩm và phảy
+* Kiểm tra sự phù hợp của toán hạng
