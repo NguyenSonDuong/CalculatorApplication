@@ -16,11 +16,11 @@
         android:layout_height="0dp"
         android:layout_weight="4"
         android:background="#FCFCFC"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/font"
         android:gravity="left"
         android:padding="10dp"
         android:textColor="#1A1A1A"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:id="@+id/edtBieuThuc"
         android:textStyle="bold" />
 
@@ -31,9 +31,10 @@
         android:textStyle="bold"
         android:textColor="#FF9800"
         android:padding="7dp"
-        android:textSize="30dp"
+        android:textSize="40dp"
+
+        android:fontFamily="@font/font_number"
         android:id="@+id/edtKetQua"
-        android:fontFamily="sans-serif-black"
         android:layout_weight="2"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,13 +48,13 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="3dp"
                 android:background="@drawable/radius3"
-                android:text="AC"
+                android:src="@drawable/ic_backspace_black_24dp"
                 android:id="@+id/btnAC"
                 android:textSize="20sp"/>
 
@@ -64,6 +65,7 @@
                 android:layout_margin="3dp"
                 android:background="@drawable/radius3"
                 android:text="%"
+                android:textColor="#FFF"
                 android:id="@+id/btnPhanTram"
                 android:textSize="20sp"/>
             <Button
@@ -74,6 +76,7 @@
                 android:id="@+id/btnAmDuong"
                 android:background="@drawable/radius3"
                 android:text="+/-"
+                android:textColor="#FFF"
                 android:textSize="20sp"/>
             <Button
                 android:layout_width="0dp"
@@ -81,6 +84,7 @@
                 android:layout_weight="1"
                 android:layout_margin="3dp"
                 android:id="@+id/btnMoNgoac"
+                android:textColor="#FFF"
                 android:background="@drawable/radius2"
                 android:text="("
                 android:textSize="20sp"/>
@@ -89,6 +93,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="3dp"
+                android:textColor="#FFF"
                 android:background="@drawable/radius2"
                 android:text=")"
                 android:id="@+id/btnDongNgoac"
@@ -137,6 +142,7 @@
                 android:layout_margin="3dp"
                 android:background="@drawable/radius2"
                 android:text="+"
+                android:textColor="#FFF"
                 android:id="@+id/btnCong"
                 android:textSize="20sp"/>
         </LinearLayout>
@@ -183,6 +189,7 @@
                 android:layout_margin="3dp"
                 android:background="@drawable/radius2"
                 android:text="-"
+                android:textColor="#FFF"
                 android:id="@+id/btnTru"
                 android:textSize="20sp"/>
         </LinearLayout>
@@ -229,6 +236,7 @@
                 android:layout_margin="3dp"
                 android:background="@drawable/radius2"
                 android:text="x"
+                android:textColor="#FFF"
                 android:id="@+id/btnNhan"
                 android:textSize="20sp"/>
         </LinearLayout>
@@ -275,6 +283,7 @@
                 android:layout_margin="3dp"
                 android:background="@drawable/radius2"
                 android:text="/"
+                android:textColor="#FFF"
                 android:id="@+id/btnChia"
                 android:textSize="20sp"/>
         </LinearLayout>

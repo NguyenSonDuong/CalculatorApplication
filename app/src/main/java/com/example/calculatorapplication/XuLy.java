@@ -42,9 +42,7 @@ public class XuLy {
                     } else {
                         if (matString.equals("+") || matString.equals("$")) {
                             if (stack.peek().equals("+") || stack.peek().equals("$")) {
-                                while (!stack.empty()) {
                                     queue.enqueue(stack.pop());
-                                }
                                 stack.push(matString);
                             } else if (stack.peek().equals("x") || stack.peek().equals("/")) {
                                 while (!stack.empty()) {
@@ -58,9 +56,7 @@ public class XuLy {
                             if (stack.peek().equals("+") || stack.peek().equals("$")) {
                                 stack.push(matString);
                             } else if (stack.peek().equals("x") || stack.peek().equals("/")) {
-                                while (!stack.empty()) {
                                     queue.enqueue(stack.pop());
-                                }
                                 stack.push(matString);
                             } else if (stack.peek().equals("(")) {
                                 stack.push(matString);
