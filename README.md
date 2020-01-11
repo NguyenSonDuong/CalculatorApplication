@@ -6,4 +6,7 @@ Mọi xử lý được để trong class XuLy
 Đã tính được các phép tính âm dương số nguyên và số thực 
 
 # Updating 2:
-Tính được phép tính vs dấu mũ, phần trăm, sin, cos, log, căn bậc 2
+Cập nhật lại thuật toán , bắt một số ngoại lệ nhập liệu
+
+* sdfsd
+* sdfsdf
