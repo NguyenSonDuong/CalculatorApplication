@@ -189,7 +189,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }catch (Exception ex){
             Toast.makeText(getApplicationContext(), ex.getMessage(),Toast.LENGTH_SHORT).show();
         }
-        edtKetQua.setText(""+kq);
+
+        if(kq%1==0)
+            edtKetQua.setText(""+(long)kq);
+        else
+            edtKetQua.setText(""+kq);
     }
     public void setTextForAll(int id){
         Button btn = (Button) findViewById(id);
@@ -201,5 +205,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void setTextForAmDuong(int id){
         edtBieuThuc.append("-");
+        bieuThuc.append("-");
     }
 }
