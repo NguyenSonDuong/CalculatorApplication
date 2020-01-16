@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FCFCFC"
+    android:background="#F5F5F5"
     android:padding="3dp"
     android:screenOrientation="portrait"
     android:weightSum="20"
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        android:background="#FCFCFC"
+        android:background="#F5F5F5"
         android:fontFamily="@font/font"
         android:gravity="left"
         android:padding="10dp"
@@ -23,7 +23,6 @@
         android:textSize="30dp"
         android:id="@+id/edtBieuThuc"
         android:textStyle="bold" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"

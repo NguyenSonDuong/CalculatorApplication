@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -13,7 +14,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     StringBuffer bieuThuc = new StringBuffer();
-
     Button btn0;
     Button btn1;
     Button btn2;
@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnMoNgoac;
     Button btnBang;
     Button btnPhanTram;
-
     TextView edtKetQua;
     EditText edtBieuThuc;
 
@@ -45,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         init();
         setOnclickButton();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     private void setOnclickButton() {
@@ -70,6 +70,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnBang.setOnClickListener(this);
         btnPhanTram.setOnClickListener(this);
         btnAmDuong.setOnClickListener(this);
+        btnAC.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                edtBieuThuc.setText("");
+                edtKetQua.setText("");
+                bieuThuc = new StringBuffer();
+                return false;
+            }
+        });
     }
 
     private void init() {
