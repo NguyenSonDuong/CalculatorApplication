@@ -8,9 +8,19 @@ import java.util.regex.Pattern;
 
 public class XuLy {
 
+    /**
+     *
+     * @param input
+     * @return trả ra một danh sách số hạng và toán hạng
+     */
     public static ArrayList getItemList(String input) {
         ArrayList<String> temb = new ArrayList<>();
-        Pattern pa = Pattern.compile("-[0-9]{1,12}|[0-9]{1,12}|\\.|[+\\/()x$]");
+        /*
+        Chuỗi regex để lấy số và toán hạng
+         */
+        //"-[0-9]{1,12}|[0-9]{1,12}|\\.|[+\\/()x$]"
+        String regexFormat = "\\-?[0-9]{1,12}\\.?[0-9]{0,12}|[+\\/()x$]";
+        Pattern pa = Pattern.compile(regexFormat);
         Matcher mat = pa.matcher(input);
         while (mat.find()) {
             temb.add(mat.group(0));
@@ -30,10 +40,6 @@ public class XuLy {
             while (a < temb.size()) {
                 matString = temb.get(a);
                 try {
-                    if (matString.equals(".")) {
-                        a++;
-                        matString = queue.dequeue3() + "." + temb.get(a);
-                    }
                     Double b = Double.parseDouble(matString.trim());
                     queue.enqueue(matString);
                 } catch (Exception ex) {
@@ -56,7 +62,7 @@ public class XuLy {
                             if (stack.peek().equals("+") || stack.peek().equals("$")) {
                                 stack.push(matString);
                             } else if (stack.peek().equals("x") || stack.peek().equals("/")) {
-                                    queue.enqueue(stack.pop());
+                                queue.enqueue(stack.pop());
                                 stack.push(matString);
                             } else if (stack.peek().equals("(")) {
                                 stack.push(matString);
@@ -73,7 +79,6 @@ public class XuLy {
                     }
 
                 }
-
                 a++;
             }
             while (!stack.empty()) {
@@ -128,10 +133,18 @@ public class XuLy {
 
         return kq.pop();
     }
+
+    /**
+     *
+     * @param input
+     * @return true nếu đã đủ đồng thời đóng ngoặc và mở ngoặc false với trường hợp ngược lại
+     */
     public static boolean isDone(String input) {
+        // lấy danh sách toán hạng và toán tử
         ArrayList<String> temb = getItemList(input);
         int demMoNgoac = 0;
         int demDongNgoac = 0;
+
         for (int i = 0; i < temb.size(); i++) {
             if (temb.get(i).equals("("))
                 demMoNgoac++;
@@ -140,18 +153,24 @@ public class XuLy {
         }
         if(demDongNgoac != demMoNgoac)
             return false;
+        // kiểm tra có thừa dấu phải số thực k
         for (int i = 0; i < temb.size(); i++) {
-            if (temb.get(i).equals(".") && temb.get(i+1).equals("."))
-                return false;
-        }
-        for (int i = 0; i < temb.size(); i++) {
-            if (temb.get(i).equals("-") && temb.get(i+1).equals("-"))
-                return false;
+            if (temb.get(i).equals("-"))
+                try{
+                    Double.parseDouble(temb.get(i+1));
+                }catch (Exception ex){
+                    return false;
+                }
+
         }
         return true;
     }
 }
 
+/**
+ * Lớp Hàng đợi Queue
+ * @param <E>
+ */
 class GenQueue<E> {
 
     public LinkedList<E> list = new LinkedList<E>();

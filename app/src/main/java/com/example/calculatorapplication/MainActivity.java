@@ -163,6 +163,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setTextForAll(v.getId());
                 break;
             case R.id.btnTru:
+
                 setTextForAll(v.getId());
                 break;
             case R.id.btnNhan:
@@ -187,6 +188,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setTextForBang(v.getId());
                 break;
             case R.id.btnPhanTram:
+                edtKetQua.setText(Double.parseDouble(edtKetQua.getText().toString())/100+"");
                 break;
 
         }
@@ -206,11 +208,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void setTextForAll(int id){
         Button btn = (Button) findViewById(id);
-        edtBieuThuc.append(btn.getText().toString());
         if(id == R.id.btnTru)
-            bieuThuc.append("$");
+            if(edtBieuThuc.getText().toString().endsWith("-") || edtBieuThuc.getText().toString().endsWith("+") || edtBieuThuc.getText().toString().endsWith("x") || edtBieuThuc.getText().toString().endsWith("/") || edtBieuThuc.getText().toString().endsWith("(") || edtBieuThuc.getText().toString().isEmpty())
+                bieuThuc.append("-");
+            else{
+                bieuThuc.append("$");
+            }
         else
             bieuThuc.append(btn.getText().toString());
+
+        edtBieuThuc.append(btn.getText().toString());
     }
     public void setTextForAmDuong(int id){
         edtBieuThuc.append("-");
