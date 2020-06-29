@@ -51,7 +51,7 @@ public class XuLy {
                                     queue.enqueue(stack.pop());
                                 stack.push(matString);
                             } else if (stack.peek().equals("x") || stack.peek().equals("/")) {
-                                while (!stack.empty()) {
+                                while (!stack.empty() && !stack.peek().equals("(") ) {
                                     queue.enqueue(stack.pop());
                                 }
                                 stack.push(matString);
@@ -125,7 +125,7 @@ public class XuLy {
                         kq.push(kq1);
                     }
                 }catch (Exception e){
-                    throw new Exception("Lỗi nhập liệu");
+                    throw new Exception("Lỗi tính toán");
                 }
             }
 

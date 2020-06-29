@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
         btn9.setOnClickListener(this);
-
         btnAC.setOnClickListener(this);
         btnCong.setOnClickListener(this);
         btnTru.setOnClickListener(this);
